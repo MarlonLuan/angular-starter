@@ -11,7 +11,7 @@ describe('MyLibComponent', () => {
       imports: [MyLibComponent]
     })
     .compileComponents();
-    
+
     fixture = TestBed.createComponent(MyLibComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
