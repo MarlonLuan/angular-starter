@@ -1,0 +1,42 @@
+on:
+  workflow_dispatch:
+  schedule:
+    - cron:  '0 * * * *'
+
+jobs:
+  old:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node:
+          - lts/*
+
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: ${{ matrix.node }}
+
+      - run: echo "y" | rm -Rf my-workspace
+
+      - run: |
+          npm i -g @angular/cli@21
+          ng n my-workspace --create-application false
+          cd my-workspace
+          ng g application my-app --style tailwind
+          ng g application my-app-ssr --style tailwind --ssr true
+          ng g library my-lib
+          cd projects
+          cd my-app
+          ng g environments
+          ng add @angular/material@21 --skip-confirmation
+          ng add angular-eslint@21 --skip-confirmation
+
+      - uses: peter-evans/create-pull-request@v8
+        with:
+          title: old
+          body:
+          commit-message: old
+          branch: old
+          draft: true
