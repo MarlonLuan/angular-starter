@@ -1,0 +1,45 @@
+on:
+  workflow_dispatch:
+  schedule:
+    - cron:  '0 * * * *'
+
+env:
+  FORCE_COLOR: 2
+
+jobs:
+  latest-plus:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node:
+          - lts/*
+
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
+
+      - uses: actions/setup-node@39370e3970a6d050c480ffad4ff0ed4d3fdee5af # v4
+        with:
+          node-version: ${{ matrix.node }}
+
+      - run: echo "y" | rm -Rf my-workspace
+
+      - run: |
+          npm i -g @angular/cli
+          ng new my-workspace --create-application false
+          cd my-workspace
+          ng g application my-app --style scss
+          ng g library my-lib
+          cd projects
+          cd my-app
+          ng g environments
+          ng add @angular/material --skip-confirmation
+          ng add @angular-eslint/schematics --skip-confirmation
+          npm i prettier -D --save-exact
+          npm i eslint-plugin-prettier -D
+
+      - uses: peter-evans/create-pull-request@67ccf781d68cd99b580ae25a5c18a1cc84ffff1f # v7
+        with:
+          title: latest-plus
+          body:
+          commit-message: latest-plus
+          branch: latest-plus
