@@ -1,0 +1,45 @@
+on:
+  workflow_dispatch:
+  schedule:
+    - cron:  '0 * * * *'
+
+env:
+  FORCE_COLOR: 2
+
+jobs:
+  next:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node:
+          - lts/*
+
+    steps:
+      - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6
+
+      - uses: actions/setup-node@395ad3262231945c25e8478fd5baf05154b1d79f # v6
+        with:
+          node-version: ${{ matrix.node }}
+
+      - run: echo "y" | rm -Rf my-workspace
+
+      - run: |
+          npm i -g @angular/cli@next
+          ng n my-workspace --create-application false
+          cd my-workspace
+          ng g application my-app --style tailwind
+          ng g application my-app-ssr --style tailwind --ssr true
+          ng g library my-lib
+          cd projects
+          cd my-app
+          ng g environments
+          ng add @angular/material@next --skip-confirmation
+          ng add angular-eslint@canary --skip-confirmation
+
+      - uses: peter-evans/create-pull-request@98357b18bf14b5342f975ff684046ec3b2a07725 # v8
+        with:
+          title: next
+          body:
+          commit-message: next
+          branch: next
+          draft: true
