@@ -5,11 +5,12 @@
   "separateMinorPatch": true,
   "separateMultipleMajor": true,
   "commitMessageSuffix": "[skip ci]",
+  "draftPR": true,
   "packageRules": [
     {
-      "automerge": true,
       "matchFileNames": [".github/**"],
-      "groupName": "github-path"
+      "groupName": "github-path",
+      "draftPR": false
     }
-  ]  
+  ]
 }
