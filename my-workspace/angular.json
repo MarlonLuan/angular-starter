@@ -24,10 +24,7 @@
                 "input": "projects/my-app/public"
               }
             ],
-            "styles": [
-              "projects/my-app/src/material-theme.scss",
-              "projects/my-app/src/styles.css"
-            ]
+            "styles": ["projects/my-app/src/material-theme.scss", "projects/my-app/src/styles.css"]
           },
           "configurations": {
             "production": {
@@ -94,9 +91,7 @@
                 "input": "projects/my-app-ssr/public"
               }
             ],
-            "styles": [
-              "projects/my-app-ssr/src/styles.css"
-            ],
+            "styles": ["projects/my-app-ssr/src/styles.css"],
             "server": "projects/my-app-ssr/src/main.server.ts",
             "outputMode": "server",
             "security": {
