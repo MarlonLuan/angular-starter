@@ -1,9 +1,11 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["config:best-practices"],
+  "extends": [
+    "config:best-practices",
+    ":separateMultipleMajorReleases",
+    ":separatePatchReleases"
+  ],
   "recreateWhen": "always",
-  "separateMinorPatch": true,
-  "separateMultipleMajor": true,
   "commitMessageSuffix": "[skip ci]",
   "draftPR": true,
   "packageRules": [
