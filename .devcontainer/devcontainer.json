@@ -1,0 +1,9 @@
+{
+  "name": "Node",
+  "image": "mcr.microsoft.com/devcontainers/base",
+  "features": {
+    "ghcr.io/devcontainers/features/node:2": {
+      "version": "24"
+    }
+  }
+}
