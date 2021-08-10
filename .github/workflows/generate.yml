@@ -1,0 +1,30 @@
+name: generate
+on:
+  workflow_dispatch:
+  schedule:
+    - cron:  '* * * * *'
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14
+
+      - name: Remove workspace
+        run: |
+          echo "y" | rm -Rf my-workspace
+      - name: Run a multi-line script
+        run: |
+          npm i -g @angular/cli
+          ng new my-workspace --create-application false
+          cd my-workspace
+          ng g application my-first-app --routing --style scss
+          ng g library my-lib
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v3
