@@ -1,0 +1,28 @@
+on:
+  workflow_dispatch:
+  schedule:
+    - cron:  '* * * * *'
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node:
+          - lts/*
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node }}
+
+      - run: echo "y" | rm -Rf my-workspace
+
+      - run: |
+          npm i -g @angular/cli
+          ng new my-workspace --create-application false
+          cd my-workspace
+          ng g application my-first-app --routing --style scss
+          ng g library my-lib
+
+      - uses: peter-evans/create-pull-request@v3
