@@ -11,9 +11,7 @@ describe('MyLibComponent', () => {
       declarations: [ MyLibComponent ]
     })
     .compileComponents();
-  });
 
-  beforeEach(() => {
     fixture = TestBed.createComponent(MyLibComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

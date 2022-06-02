@@ -13,7 +13,6 @@
     "sourceMap": true,
     "paths": {
       "my-lib": [
-        "dist/my-lib/my-lib",
         "dist/my-lib"
       ]
     },
@@ -22,7 +21,7 @@
     "experimentalDecorators": true,
     "moduleResolution": "node",
     "importHelpers": true,
-    "target": "es2017",
+    "target": "es2020",
     "module": "es2020",
     "lib": [
       "es2020",
