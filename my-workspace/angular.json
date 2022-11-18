@@ -20,7 +20,9 @@
             "outputPath": "dist/my-first-app",
             "index": "projects/my-first-app/src/index.html",
             "main": "projects/my-first-app/src/main.ts",
-            "polyfills": "projects/my-first-app/src/polyfills.ts",
+            "polyfills": [
+              "zone.js"
+            ],
             "tsConfig": "projects/my-first-app/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
@@ -44,12 +46,6 @@
                   "type": "anyComponentStyle",
                   "maximumWarning": "2kb",
                   "maximumError": "4kb"
-                }
-              ],
-              "fileReplacements": [
-                {
-                  "replace": "projects/my-first-app/src/environments/environment.ts",
-                  "with": "projects/my-first-app/src/environments/environment.prod.ts"
                 }
               ],
               "outputHashing": "all"
@@ -86,10 +82,11 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "projects/my-first-app/src/test.ts",
-            "polyfills": "projects/my-first-app/src/polyfills.ts",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ],
             "tsConfig": "projects/my-first-app/tsconfig.spec.json",
-            "karmaConfig": "projects/my-first-app/karma.conf.js",
             "inlineStyleLanguage": "scss",
             "assets": [
               "projects/my-first-app/src/favicon.ico",
@@ -127,9 +124,11 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "projects/my-lib/src/test.ts",
             "tsConfig": "projects/my-lib/tsconfig.spec.json",
-            "karmaConfig": "projects/my-lib/karma.conf.js"
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
           }
         }
       }
