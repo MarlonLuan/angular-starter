@@ -1,6 +1,6 @@
 # MyWorkspace
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.4.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.0-next.2.
 
 ## Development server
 
