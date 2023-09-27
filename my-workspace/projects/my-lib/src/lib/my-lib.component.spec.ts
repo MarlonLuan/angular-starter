@@ -8,7 +8,7 @@ describe('MyLibComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [MyLibComponent]
+      imports: [MyLibComponent]
     });
     fixture = TestBed.createComponent(MyLibComponent);
     component = fixture.componentInstance;
