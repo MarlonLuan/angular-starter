@@ -25,7 +25,7 @@ jobs:
           ng g application my-app --style scss
           ng g library my-lib
           cd my-app
-          ng generate environments
+          ng g environments
 
       - uses: peter-evans/create-pull-request@v6
         with:
