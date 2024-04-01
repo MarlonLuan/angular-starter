@@ -24,7 +24,7 @@ jobs:
           cd my-workspace
           ng g application my-first-app --routing --style scss
           ng g library my-lib
-      - uses: peter-evans/create-pull-request@v5
+      - uses: peter-evans/create-pull-request@v6
         with:
           title: latest
           body:
