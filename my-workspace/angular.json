@@ -3,34 +3,34 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "my-first-app": {
+    "my-app": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
           "style": "scss"
         }
       },
-      "root": "projects/my-first-app",
-      "sourceRoot": "projects/my-first-app/src",
+      "root": "projects/my-app",
+      "sourceRoot": "projects/my-app/src",
       "prefix": "app",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/my-first-app",
-            "index": "projects/my-first-app/src/index.html",
-            "browser": "projects/my-first-app/src/main.ts",
+            "outputPath": "dist/my-app",
+            "index": "projects/my-app/src/index.html",
+            "browser": "projects/my-app/src/main.ts",
             "polyfills": [
               "zone.js"
             ],
-            "tsConfig": "projects/my-first-app/tsconfig.app.json",
+            "tsConfig": "projects/my-app/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
-              "projects/my-first-app/src/favicon.ico",
-              "projects/my-first-app/src/assets"
+              "projects/my-app/src/favicon.ico",
+              "projects/my-app/src/assets"
             ],
             "styles": [
-              "projects/my-first-app/src/styles.scss"
+              "projects/my-app/src/styles.scss"
             ],
             "scripts": []
           },
@@ -62,10 +62,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "my-first-app:build:production"
+              "buildTarget": "my-app:build:production"
             },
             "development": {
-              "buildTarget": "my-first-app:build:development"
+              "buildTarget": "my-app:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -73,7 +73,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "my-first-app:build"
+            "buildTarget": "my-app:build"
           }
         },
         "test": {
@@ -83,14 +83,14 @@
               "zone.js",
               "zone.js/testing"
             ],
-            "tsConfig": "projects/my-first-app/tsconfig.spec.json",
+            "tsConfig": "projects/my-app/tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
             "assets": [
-              "projects/my-first-app/src/favicon.ico",
-              "projects/my-first-app/src/assets"
+              "projects/my-app/src/favicon.ico",
+              "projects/my-app/src/assets"
             ],
             "styles": [
-              "projects/my-first-app/src/styles.scss"
+              "projects/my-app/src/styles.scss"
             ],
             "scripts": []
           }
