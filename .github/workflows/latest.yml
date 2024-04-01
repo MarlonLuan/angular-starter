@@ -10,9 +10,9 @@ jobs:
         node:
           - lts/*
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
-      - uses: actions/setup-node@v3
+      - uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node }}
 
@@ -22,10 +22,12 @@ jobs:
           npm i -g @angular/cli
           ng new my-workspace --create-application false
           cd my-workspace
-          ng g application my-first-app --routing --style scss
+          ng g application my-app --style scss
           ng g library my-lib
+          cd my-app
+          ng generate environments
 
-      - uses: peter-evans/create-pull-request@v5
+      - uses: peter-evans/create-pull-request@v6
         with:
           title: latest
           body:
