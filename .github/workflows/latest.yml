@@ -22,8 +22,9 @@ jobs:
           npm i -g @angular/cli
           ng new my-workspace --create-application false
           cd my-workspace
-          ng g application my-first-app --routing --style scss
+          ng g application my-app --routing --style scss
           ng g library my-lib
+
       - uses: peter-evans/create-pull-request@v6
         with:
           title: latest
