@@ -26,8 +26,10 @@
             "tsConfig": "projects/my-app/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
-              "projects/my-app/src/favicon.ico",
-              "projects/my-app/src/assets"
+              {
+                "glob": "**/*",
+                "input": "public"
+              }
             ],
             "styles": [
               "projects/my-app/src/styles.scss"
@@ -92,8 +94,10 @@
             "tsConfig": "projects/my-app/tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
             "assets": [
-              "projects/my-app/src/favicon.ico",
-              "projects/my-app/src/assets"
+              {
+                "glob": "**/*",
+                "input": "public"
+              }
             ],
             "styles": [
               "projects/my-app/src/styles.scss"
