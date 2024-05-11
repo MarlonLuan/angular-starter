@@ -1,4 +1,5 @@
 on:
+  push:
   workflow_dispatch:
   schedule:
     - cron:  '0 * * * *'
@@ -29,7 +30,7 @@ jobs:
           cd projects
           cd my-app
           ng g environments
-          ng add @angular-eslint/schematics
+          bash -c "yes || true" | ng lint
 
       - uses: peter-evans/create-pull-request@6d6857d36972b65feb161a90e484f2984215f83e # v6
         with:
