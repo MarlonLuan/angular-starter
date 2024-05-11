@@ -29,11 +29,7 @@ jobs:
           cd projects
           cd my-app
           ng g environments
-          set command "ng lint"
-          spawn $command
-          expect {
-            -re ".+" { send "y\r" }
-          }
+          ng lint <<< "y"
 
       - uses: peter-evans/create-pull-request@6d6857d36972b65feb161a90e484f2984215f83e # v6
         with:
