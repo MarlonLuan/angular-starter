@@ -29,7 +29,7 @@ jobs:
           cd projects
           cd my-app
           ng g environments
-          yes 2>/dev/null | ng lint
+          ng add @angular-eslint/schematics
 
       - uses: peter-evans/create-pull-request@6d6857d36972b65feb161a90e484f2984215f83e # v6
         with:
