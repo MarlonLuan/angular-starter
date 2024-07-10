@@ -1,6 +1,6 @@
 # MyLib
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.0.
+This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.1.0.
 
 ## Code scaffolding
 
