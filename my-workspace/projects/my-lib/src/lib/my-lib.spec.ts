@@ -14,7 +14,7 @@ describe('MyLib', () => {
 
     fixture = TestBed.createComponent(MyLib);
     component = fixture.componentInstance;
-    fixture.detectChanges();
+    await fixture.whenStable();
   });
 
   it('should create', () => {
