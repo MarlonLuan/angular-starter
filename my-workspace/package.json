@@ -39,7 +39,7 @@
     "@angular/build": "^21.0.0",
     "@angular/cli": "^21.0.0",
     "@angular/compiler-cli": "^21.0.0",
-    "angular-eslint": "21.0.0",
+    "angular-eslint": "21.0.1",
     "eslint": "^9.39.1",
     "jsdom": "^27.1.0",
     "ng-packagr": "^21.0.0",
