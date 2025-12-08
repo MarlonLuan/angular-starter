@@ -36,15 +36,15 @@
     "tslib": "^2.3.0"
   },
   "devDependencies": {
-    "@angular/build": "^21.0.2",
-    "@angular/cli": "^21.0.2",
-    "@angular/compiler-cli": "^21.0.0",
+    "@angular/build": "21.0.2",
+    "@angular/cli": "21.0.2",
+    "@angular/compiler-cli": "21.0.3",
     "angular-eslint": "21.1.0",
-    "eslint": "^9.39.1",
-    "jsdom": "^27.1.0",
-    "ng-packagr": "^21.0.0",
-    "typescript": "~5.9.2",
+    "eslint": "9.39.1",
+    "jsdom": "27.2.0",
+    "ng-packagr": "21.0.0",
+    "typescript": "5.9.3",
     "typescript-eslint": "8.47.0",
-    "vitest": "^4.0.8"
+    "vitest": "4.0.15"
   }
 }
