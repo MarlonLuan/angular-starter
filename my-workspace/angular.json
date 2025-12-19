@@ -25,7 +25,7 @@
               }
             ],
             "styles": [
-              "projects/my-app/src/custom-theme.scss",
+              "projects/my-app/src/material-theme.scss",
               "projects/my-app/src/styles.css"
             ]
           },
