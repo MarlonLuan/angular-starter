@@ -46,7 +46,7 @@
     "@angular/material": "^21.1.2",
     "@tailwindcss/postcss": "^4.1.12",
     "@types/express": "^5.0.1",
-    "@types/node": "^20.17.19",
+    "@types/node": "^22.0.0",
     "angular-eslint": "21.2.0",
     "eslint": "^9.39.2",
     "jsdom": "^27.1.0",
