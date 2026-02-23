@@ -99,6 +99,9 @@
             ],
             "server": "projects/my-app-ssr/src/main.server.ts",
             "outputMode": "server",
+            "security": {
+              "allowedHosts": []
+            },
             "ssr": {
               "entry": "projects/my-app-ssr/src/server.ts"
             }
