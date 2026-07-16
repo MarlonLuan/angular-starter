@@ -11,7 +11,7 @@
     "lint": "ng lint"
   },
   "private": true,
-  "packageManager": "npm@11.16.0",
+  "packageManager": "npm@11.18.0",
   "dependencies": {
     "@angular/cdk": "^22.0.5",
     "@angular/common": "^22.0.0",
