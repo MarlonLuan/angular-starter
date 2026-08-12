@@ -11,14 +11,14 @@
     "lint": "ng lint"
   },
   "private": true,
-  "packageManager": "npm@11.16.0",
+  "packageManager": "npm@11.17.0",
   "dependencies": {
-    "@angular/cdk": "^22.1.1",
+    "@angular/cdk": "^22.1.2",
     "@angular/common": "^22.1.0",
     "@angular/compiler": "^22.1.0",
     "@angular/core": "^22.1.0",
     "@angular/forms": "^22.1.0",
-    "@angular/material": "^22.1.1",
+    "@angular/material": "^22.1.2",
     "@angular/platform-browser": "^22.1.0",
     "@angular/platform-server": "^22.1.0",
     "@angular/router": "^22.1.0",
