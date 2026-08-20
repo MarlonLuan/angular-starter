@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { MyLib } from './my-lib';
 
 describe('MyLib', () => {

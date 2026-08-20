@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'lib-my-lib',
   imports: [],
-  template: ` <p>my-lib works!</p> `,
+  selector: 'lib-my-lib',
   styles: ``,
+  template: ` <p>my-lib works!</p> `,
 })
 export class MyLib {}
