@@ -145,19 +145,17 @@
     "my-lib": {
       "projectType": "library",
       "root": "projects/my-lib",
-      "sourceRoot": "projects/my-lib",
+      "sourceRoot": "projects/my-lib/src",
       "prefix": "lib",
       "architect": {
         "build": {
-          "builder": "@angular/build:library",
-          "options": {
-            "tsConfig": "projects/my-lib/tsconfig.lib.json"
-          },
+          "builder": "@angular/build:ng-packagr",
           "configurations": {
-            "production": {},
+            "production": {
+              "tsConfig": "projects/my-lib/tsconfig.lib.prod.json"
+            },
             "development": {
-              "compilationMode": "full",
-              "declarationMap": true
+              "tsConfig": "projects/my-lib/tsconfig.lib.json"
             }
           },
           "defaultConfiguration": "production"
